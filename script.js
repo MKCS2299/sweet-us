@@ -6,7 +6,7 @@ const frames = [
   },
   {
     img: "frame-2-nutties.jpg",
-    text: "Somewhere along the way,<br>this became our energy.<br><br>Between walks.<br>Between days.",
+    text: "Somewhere along the streets of Goa,<br>this became our energy.<br><br>Between walks.<br>Between days.",
     sorry: false
   },
   {
@@ -21,7 +21,7 @@ const frames = [
   },
   {
     img: "frame-5-toblerone.jpg",
-    text: "Shimla was good.<br><br>The chocolate was better.<br><br>Until someone stole it.",
+    text: "Shimla was good.<br><br>The chocolate was there.<br><br>Until someone stole it.",
     sorry: false
   },
   {
@@ -36,7 +36,7 @@ const frames = [
   },
   {
     img: "frame-8-twix.jpg",
-    text: "And maybe now this.<br><br>Our morning saviour.<br><br>From now on?",
+    text: "And maybe now this.<br><br>Our Morni companion.<br><br>From now on?",
     sorry: false
   }
 ];
@@ -55,6 +55,15 @@ function showFrame(i) {
 
   imageEl.style.backgroundImage = `url("${frames[i].img}")`;
   textEl.innerHTML = frames[i].text;
+
+/* reset text color */
+textEl.classList.remove("black");
+
+/* last frame = black text */
+if (i === frames.length - 1) {
+  textEl.classList.add("black");
+}
+
 
   const progress = i / (frames.length - 1);
   foxEl.style.left = `${10 + progress * 80}%`;

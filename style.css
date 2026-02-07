@@ -8,21 +8,27 @@ html, body {
 
 .container {
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
 
-img.main {
-  max-width: 90%;
-  max-height: 75%;
-  object-fit: contain;
+/* MAIN IMAGE */
+.image {
+  position: absolute;
+  inset: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1s ease;
 }
 
+.image.show {
+  opacity: 1;
+}
+
+/* TEXT */
 .text {
   position: absolute;
   bottom: 12%;
@@ -36,14 +42,18 @@ img.main {
   padding: 0 20px;
 }
 
-.show { opacity: 1; }
+.text.show {
+  opacity: 1;
+}
 
+/* TIMELINE */
 .timeline {
   position: absolute;
   bottom: 5%;
+  left: 10%;
   width: 80%;
   height: 4px;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.25);
   border-radius: 2px;
 }
 
@@ -54,6 +64,7 @@ img.main {
   transition: left 0.8s ease;
 }
 
+/* SORRY ICON */
 .sorry {
   position: absolute;
   top: 10%;

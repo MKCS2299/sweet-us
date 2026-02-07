@@ -78,3 +78,9 @@ html, body {
   transition: opacity 0.8s ease;
   z-index: 4;
 }
+
+/* black text for final frame */
+.text.black {
+  color: #000000;
+}
+

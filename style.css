@@ -1,0 +1,64 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #0f0f0f;
+  font-family: Georgia, serif;
+  cursor: pointer;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+img.main {
+  max-width: 90%;
+  max-height: 75%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.text {
+  position: absolute;
+  bottom: 12%;
+  width: 100%;
+  text-align: center;
+  color: #f2f2f2;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  padding: 0 20px;
+}
+
+.show { opacity: 1; }
+
+.timeline {
+  position: absolute;
+  bottom: 5%;
+  width: 80%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+}
+
+.fox {
+  position: absolute;
+  bottom: calc(5% - 18px);
+  font-size: 28px;
+  transition: left 0.8s ease;
+}
+
+.sorry {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-size: 40px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}

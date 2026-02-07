@@ -53,7 +53,7 @@ function showFrame(i) {
   textEl.classList.remove("show");
   sorryEl.style.opacity = 0;
 
-  imageEl.style.backgroundImage = `url('${frames[i].img}')`;
+  imageEl.style.backgroundImage = `url("${frames[i].img}")`;
   textEl.innerHTML = frames[i].text;
 
   const progress = i / (frames.length - 1);
@@ -65,7 +65,9 @@ function showFrame(i) {
   });
 
   if (frames[i].sorry) {
-    setTimeout(() => sorryEl.style.opacity = 1, 700);
+    setTimeout(() => {
+      sorryEl.style.opacity = 1;
+    }, 700);
   }
 }
 

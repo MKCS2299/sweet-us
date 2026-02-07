@@ -43,31 +43,26 @@ const frames = [
 
 let index = 0;
 
-const imgEl = document.getElementById("image");
+const imageEl = document.getElementById("image");
 const textEl = document.getElementById("text");
 const foxEl = document.getElementById("fox");
 const sorryEl = document.getElementById("sorryIcon");
 
 function showFrame(i) {
-  imgEl.classList.remove("show");
+  imageEl.classList.remove("show");
   textEl.classList.remove("show");
   sorryEl.style.opacity = 0;
 
-  imgEl.src = frames[i].img;
+  imageEl.style.backgroundImage = `url('${frames[i].img}')`;
   textEl.innerHTML = frames[i].text;
 
   const progress = i / (frames.length - 1);
-  foxEl.style.left = `${progress * 80}%`;
+  foxEl.style.left = `${10 + progress * 80}%`;
 
-  if (imgEl.complete) {
-    imgEl.classList.add("show");
+  requestAnimationFrame(() => {
+    imageEl.classList.add("show");
     setTimeout(() => textEl.classList.add("show"), 500);
-  } else {
-    imgEl.onload = () => {
-      imgEl.classList.add("show");
-      setTimeout(() => textEl.classList.add("show"), 500);
-    };
-  }
+  });
 
   if (frames[i].sorry) {
     setTimeout(() => sorryEl.style.opacity = 1, 700);
